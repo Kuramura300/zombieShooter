@@ -21,11 +21,14 @@ public class Weapon : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (GameObject.Find("EventSystem").GetComponent<PauseScript>().paused == false)
         {
-            if (!isFiring)
+            if (Input.GetMouseButton(0))
             {
-                Fire();
+                if (!isFiring)
+                {
+                    Fire();
+                }
             }
         }
     }

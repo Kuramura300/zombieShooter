@@ -5,9 +5,12 @@ public class MoveTowardsObject : MonoBehaviour
     public float speed = 5.0f;
     private void Update()
     {
-        if (target != null)
+        if (GameObject.Find("EventSystem").GetComponent<PauseScript>().paused == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * 0.01f);
+            if (target != null)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target.position, speed * 0.01f);
+            }
         }
     }
     public void SetTarget(Transform newTarget)

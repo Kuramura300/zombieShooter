@@ -16,6 +16,17 @@ public class TimerEvent : MonoBehaviour
             Invoke("OnTimerComplete", time);
         }
     }
+    private void OnEnable()
+    {
+        if (repeat)
+        {
+            InvokeRepeating("OnTimerComplete", 0, time);
+        }
+        else
+        {
+            Invoke("OnTimerComplete", time);
+        }
+    }
     private void OnTimerComplete()
     {
         onTimerComplete.Invoke();

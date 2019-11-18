@@ -66,6 +66,8 @@ public class WaveScript : MonoBehaviour
                 waveText.color = Color.white;
 
                 changingTextColor = false;
+
+                changingTextColorTimer = 0;
             }
         }
     }

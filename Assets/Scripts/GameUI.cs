@@ -24,4 +24,9 @@ public class GameUI : MonoBehaviour
         playerScore += theScore;
         scoreText.text = "SCORE: " + playerScore.ToString();
     }
+
+    void Update()
+    {
+        healthBar.maxValue = GameObject.Find("Hero").GetComponent<HealthSystem>().maxHealth;
+    }
 }

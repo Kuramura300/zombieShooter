@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour
     public bool paused = false;
 
     public GameObject pauseMenu;
+    public GameObject shopMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class PauseScript : MonoBehaviour
         else
         {
             pauseMenu.SetActive(false);
+            shopMenu.SetActive(false);
 
             Time.timeScale = 1;
 

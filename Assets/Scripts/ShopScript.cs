@@ -50,5 +50,6 @@ public class ShopScript : MonoBehaviour
     public void upgradeMaxHealth()
     {
         player.GetComponent<HealthSystem>().maxHealth += 5;
+        player.GetComponent<HealthSystem>().health += 5;
     }
 }

@@ -28,5 +28,6 @@ public class GameUI : MonoBehaviour
     void Update()
     {
         healthBar.maxValue = GameObject.Find("Hero").GetComponent<HealthSystem>().maxHealth;
+        healthBar.value = GameObject.Find("Hero").GetComponent<HealthSystem>().health;
     }
 }

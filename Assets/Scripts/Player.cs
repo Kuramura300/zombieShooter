@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
     public static event UpdateHealth OnUpdateHealth;
 
     private Animator gunAnim;
+
+    public GameObject gameOverScreen;
     private void Start()
     {
         gunAnim = GetComponent<Animator>();
@@ -29,6 +31,13 @@ public class Player : MonoBehaviour
         {
             OnUpdateHealth(health);
         }
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+
+        gameOverScreen.SetActive(true);
     }
 
 }

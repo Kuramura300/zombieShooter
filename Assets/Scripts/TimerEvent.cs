@@ -5,17 +5,17 @@ public class TimerEvent : MonoBehaviour
     public float time = 1;
     public bool repeat = false;
     public UnityEvent onTimerComplete;
-    private void Start()
-    {
-        if (repeat)
-        {
-            InvokeRepeating("OnTimerComplete", 0, time);
-        }
-        else
-        {
-            Invoke("OnTimerComplete", time);
-        }
-    }
+    //private void Start()
+    //{
+    //    if (repeat)
+    //    {
+    //        InvokeRepeating("OnTimerComplete", 0, time);
+    //    }
+    //    else
+    //    {
+    //        Invoke("OnTimerComplete", time);
+    //    }
+    //}
     private void OnEnable()
     {
         if (repeat)

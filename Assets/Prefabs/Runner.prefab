@@ -18,8 +18,9 @@ GameObject:
   - component: {fileID: 1425944493831588469}
   - component: {fileID: 8615196339298302782}
   - component: {fileID: 6504189571090581308}
+  - component: {fileID: 4528622552419530643}
   m_Layer: 9
-  m_Name: Zombie
+  m_Name: Runner
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca87cc82b2dab714cac16a8c8bc5a6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   health: 3
   onDie:
     m_PersistentCalls:
@@ -163,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 5
+  speed: 10
 --- !u!114 &6671312258601115517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +262,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 10
+--- !u!50 &4528622552419530643
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671312258601115396}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6957123898710928253
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +294,7 @@ GameObject:
   - component: {fileID: 6021987569060144690}
   - component: {fileID: 2047435308676011537}
   - component: {fileID: 5380547482247581804}
+  - component: {fileID: 143491334719543021}
   m_Layer: 11
   m_Name: Hurt Trigger
   m_TagString: Untagged
@@ -304,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e69e1be58b47ed4d928acff1315684f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDamage: 1
   damage: 1
   resetTime: 0.25
 --- !u!58 &5380547482247581804
@@ -322,3 +347,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.21}
   serializedVersion: 2
   m_Radius: 0.74
+--- !u!114 &143491334719543021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957123898710928253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd79d2ef2ea348a418197bb47c3cb8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

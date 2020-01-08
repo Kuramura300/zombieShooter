@@ -5,6 +5,7 @@ using UnityEngine;
 public class BufferScript : MonoBehaviour
 {
     GameObject Buffer;
+    public GameObject inspiredParticles;
 
     void Start()
     {
@@ -16,10 +17,13 @@ public class BufferScript : MonoBehaviour
         if (Buffer != null)
         {
             GetComponent<HurtTrigger>().inspired = true;
+
+            inspiredParticles.SetActive(true);
         }
         else
         {
             GetComponent<HurtTrigger>().inspired = false;
+            inspiredParticles.SetActive(false);
         }
     }
 

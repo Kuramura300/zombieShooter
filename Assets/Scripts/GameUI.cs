@@ -24,12 +24,12 @@ public class GameUI : MonoBehaviour
     {
         playerScore += theScore;
         totalScore += theScore;
-        scoreText.text = "SCORE: " + playerScore.ToString("0");
     }
 
     void Update()
     {
         healthBar.maxValue = GameObject.Find("Hero").GetComponent<HealthSystem>().maxHealth;
         healthBar.value = GameObject.Find("Hero").GetComponent<HealthSystem>().health;
+        scoreText.text = "SCORE: " + playerScore.ToString("0");
     }
 }

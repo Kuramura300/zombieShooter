@@ -13,17 +13,17 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        if (GameObject.Find("EventSystem").GetComponent<PauseScript>().paused == false)
-        {
-            if (Input.GetMouseButton(0))
-            {
-                gunAnim.SetBool("isFiring", true);
-            }
-            else
-            {
-                gunAnim.SetBool("isFiring", false);
-            }
-        }
+        //if (GameObject.Find("EventSystem").GetComponent<PauseScript>().paused == false)
+        //{
+        //    if (Input.GetMouseButton(0))
+        //    {
+        //        gunAnim.SetBool("isFiring", true);
+        //    }
+        //    else
+        //    {
+        //        gunAnim.SetBool("isFiring", false);
+        //    }
+        //}
     }
     public void SendHealthData(int health)
     {

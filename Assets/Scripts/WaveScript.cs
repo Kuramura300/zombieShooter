@@ -12,6 +12,14 @@ public class WaveScript : MonoBehaviour
     private float changingTextColorTimer = 0;
     private float waveCheckTimer = 0;
 
+    //Wave difficulty variables
+    public int difficultyLevel = 1;
+    private int waveSpawnCounter = 0;
+    private bool diffIncreased = false;
+    public int spawnerRange = 1;
+    private bool rangeTo2 = false;
+    private bool rangeTo3 = false;
+
     public GameObject[] EnemySpawners;
 
     public float cooldown = 1;
@@ -45,6 +53,8 @@ public class WaveScript : MonoBehaviour
                 changingTextColor = true;
 
                 repeatCount = 0;
+                waveSpawnCounter = 0;
+                diffIncreased = false;
             }
 
             waveCheckTimer = 0;
@@ -70,6 +80,40 @@ public class WaveScript : MonoBehaviour
                 changingTextColorTimer = 0;
             }
         }
+
+        //Wave Difficulty Progression
+        //---------------------------------------------------
+        //-Increases difficulty every 2 waves
+        if (waveCount % 2 == 0)
+        {
+            if (diffIncreased == false)
+            {
+                difficultyLevel++;
+
+                diffIncreased = true;
+            }
+        }
+        //-Introduce Runners from wave 5
+        if (rangeTo2 == false)
+        {
+            if (waveCount >= 5)
+            {
+                spawnerRange = 2;
+
+                rangeTo2 = true;
+            }
+        }
+        //-Introduce Buffers from wave 10
+        if (rangeTo3 == false)
+        {
+            if (waveCount >= 10)
+            {
+                spawnerRange = 3;
+
+                rangeTo3 = true;
+            }
+        }
+        //---------------------------------------------------
     }
 
     private void OnTimerComplete()
@@ -82,9 +126,16 @@ public class WaveScript : MonoBehaviour
         }
         else
         {
+            waveSpawnCounter++;
+
             foreach (GameObject spawner in EnemySpawners)
             {
                 spawner.SetActive(false);
+            }
+
+            if (waveSpawnCounter < difficultyLevel)
+            {
+                repeatCount = 0;
             }
         }
     }

@@ -44,7 +44,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.55}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
 --- !u!1 &6671312258601115396
@@ -81,7 +81,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6671312258601115396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.05, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6021987569060144690}
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_SortingLayerID: 107509697
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0b64f8779f7836e458856f40d0ca74db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc135b7e53d69b242a87290fc79b82d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,9 +151,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.63}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.44
+  m_Radius: 0.21
 --- !u!114 &6671312258601115393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,34 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 3
-  onDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 244151173628557738}
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8615196339298302782}
-        m_MethodName: Die
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  health: 10
   onDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -213,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 5
+  speed: 3
 --- !u!114 &6671312258601115517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 6520080924254215989, guid: dc91d214f6e77a04abe9a453f2734a1e,
     type: 3}
+  enemies: []
+  upperRange: 0
   adjustmentAngle: 0
 --- !u!114 &1425944493831588469
 MonoBehaviour:
@@ -378,6 +353,7 @@ MonoBehaviour:
   startDamage: 1
   damage: 1
   resetTime: 0.5
+  inspired: 0
 --- !u!58 &5380547482247581804
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -391,6 +367,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21}
+  m_Offset: {x: 0, y: 0.16}
   serializedVersion: 2
-  m_Radius: 0.74
+  m_Radius: 0.25

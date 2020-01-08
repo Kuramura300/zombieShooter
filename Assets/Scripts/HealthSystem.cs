@@ -14,7 +14,14 @@ public class HealthSystem : MonoBehaviour
         onDamaged.Invoke(health);
         if (health < 1)
         {
-            onDie.Invoke();
+            if (gameObject.name == "Hero")
+            {
+                onDie.Invoke();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

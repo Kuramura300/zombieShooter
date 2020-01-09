@@ -10,6 +10,7 @@ This game is a prototype of a game idea I had which would include a storyline, h
 W – Move Up
 
 S – Move Down
+
 A – Move Left
 
 D – Move Right

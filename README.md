@@ -20,6 +20,7 @@ Esc – Pause/enter upgrades shop
 ### Mouse
 
 Mouse Position – Aiming 
+
 Left Click – Fire gun 
 
 ## Credits
